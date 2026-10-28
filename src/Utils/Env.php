@@ -41,6 +41,10 @@ final class Env
             $value = trim(substr($line, $pos + 1));
             $value = trim($value, "\"'");
 
+            // Las variables del alojamiento tienen prioridad sobre el archivo local.
+            if (getenv($key) !== false || array_key_exists($key, $_ENV)) {
+                continue;
+            }
             $_ENV[$key] = $value;
             putenv("$key=$value");
         }

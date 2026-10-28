@@ -62,7 +62,7 @@ final class ExchangeRepository extends BaseRepository
 
     public function updateStatus(int $id, string $estado): bool
     {
-        $sql = 'UPDATE solicitudes_intercambio SET estado = :estado WHERE id = :id';
+        $sql = 'UPDATE solicitudes_intercambio SET estado = :estado WHERE id = :id AND estado = \'pendiente\'';
         $stmt = $this->db->prepare($sql);
         $stmt->execute([':estado' => $estado, ':id' => $id]);
 

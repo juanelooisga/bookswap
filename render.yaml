@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: bookswap-demo
+    runtime: docker
+    plan: free
+    branch: codex/public-demo
+    healthCheckPath: /api/health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: DEMO_MODE
+        value: "true"
+      - key: DEMO_INITIALIZE
+        value: "true"
+      - key: DB_SSL
+        value: "true"
+      - key: DB_SSL_CA
+        value: /etc/secrets/mysql-ca.pem
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_NAME
+        value: bookswap_demo
+      - key: DB_USER
+        sync: false
+      - key: DB_PASS
+        sync: false

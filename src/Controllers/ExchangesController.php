@@ -95,6 +95,11 @@ final class ExchangesController extends BaseController
             return;
         }
 
+        if ((int) $book['usuario_id'] !== $receptorId) {
+            $this->fail('El receptor debe ser el propietario del libro.', 422);
+            return;
+        }
+
         try {
             $id = $this->exchanges->create([
                 'usuario_solicitante_id' => $solicitanteId,
@@ -148,8 +153,14 @@ final class ExchangesController extends BaseController
             return;
         }
 
+        $db = \Juanc\Bookswap\App::database();
+        $db->beginTransaction();
         try {
-            $this->exchanges->updateStatus($id, 'aceptada');
+            if (!$this->exchanges->updateStatus($id, 'aceptada')) {
+                $db->rollBack();
+                $this->fail('La solicitud ya cambió de estado.', 409);
+                return;
+            }
 
             $solicitanteId = (int) $exchange['usuario_solicitante_id'];
             $receptorId = (int) $exchange['usuario_receptor_id'];
@@ -167,7 +178,9 @@ final class ExchangesController extends BaseController
                 'descripcion' => 'Intercambio aceptado',
                 'estado_final' => 'exitoso',
             ]);
+            $db->commit();
         } catch (Throwable $e) {
+            if ($db->inTransaction()) { $db->rollBack(); }
             $this->fail('No se pudo aceptar la solicitud.', 500, [
                 'exception' => $e->getMessage(),
             ]);
@@ -198,15 +211,23 @@ final class ExchangesController extends BaseController
             return;
         }
 
+        $db = \Juanc\Bookswap\App::database();
+        $db->beginTransaction();
         try {
-            $this->exchanges->updateStatus($id, 'rechazada');
+            if (!$this->exchanges->updateStatus($id, 'rechazada')) {
+                $db->rollBack();
+                $this->fail('La solicitud ya cambió de estado.', 409);
+                return;
+            }
 
             $this->notifications->create(
                 (int) $exchange['usuario_solicitante_id'],
                 'solicitud_rechazada',
                 'Tu solicitud de intercambio fue rechazada.'
             );
+            $db->commit();
         } catch (Throwable $e) {
+            if ($db->inTransaction()) { $db->rollBack(); }
             $this->fail('No se pudo rechazar la solicitud.', 500, [
                 'exception' => $e->getMessage(),
             ]);

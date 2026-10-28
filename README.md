@@ -1,5 +1,7 @@
 # BookSwap
 
+> Rama de demo `codex/public-demo`: preparación de PHP y MySQL para publicación. La versión académica está en `main`. Consulta [la guía de despliegue](docs/DEMO_PUBLICA.md).
+
 Proyecto académico de una plataforma de intercambio de libros, con API REST en PHP y persistencia en MySQL.
 
 ## Creador y desarrollador
@@ -213,7 +215,7 @@ Abrir:
 - Interfaz: `http://localhost:8080/frontend.html`.
 - Estado de API y conexión: `http://localhost:8080/api/health`.
 
-La interfaz original tiene fijada la API en `http://localhost:8080/api`; usar ese puerto para reproducir esta versión. Antes de cambiar el dominio o publicar una demo se debe adaptar esa dirección. Los comandos anteriores sirven la aplicación desde la raíz de ese servidor local; una instalación de Apache en una subcarpeta puede requerir ajustes adicionales de rutas.
+En esta rama la interfaz utiliza la API del mismo dominio y puerto desde el que se abre. La versión académica de `main` conserva la dirección local original. Los comandos anteriores sirven la aplicación desde la raíz de ese servidor local; una instalación de Apache en una subcarpeta puede requerir ajustes adicionales de rutas.
 
 ## Probar el flujo principal
 
@@ -265,4 +267,4 @@ La versión pública debe excluir `.env`, `vendor/`, cachés y datos personales.
 
 La publicación de una demo en Internet se prepara por separado: requiere ejecutar PHP y conectar MySQL. Consultar primero los pendientes de [la revisión técnica](docs/REVISION.md).
 
-No se ha desplegado una demo pública de esta copia.
+La configuración de despliegue está en `render.yaml` y `Dockerfile`. La conexión a la base externa y el despliegue público están pendientes; ver [la guía de la demo](docs/DEMO_PUBLICA.md).

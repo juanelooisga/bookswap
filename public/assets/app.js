@@ -1,4 +1,4 @@
-const API = "http://localhost:8080/api";
+const API = new URL("api", window.location.href).href;
 
 /* =========================
    FUNCIONES GENERALES
@@ -9,11 +9,13 @@ function setHTML(id, html) {
 }
 
 function limpiarTexto(valor) {
-  return valor ?? "Sin dato";
+  return String(valor ?? "Sin dato").replace(/[&<>"']/g, (caracter) => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[caracter]));
 }
 
 function mostrarMensaje(id, mensaje) {
-  setHTML(id, `<div class="item-card">${mensaje}</div>`);
+  setHTML(id, `<div class="item-card">${limpiarTexto(mensaje)}</div>`);
 }
 
 async function postJson(url, data) {
@@ -63,8 +65,8 @@ function renderLibros(data) {
       <p><strong>Estado:</strong> ${limpiarTexto(book.descripcion_estado)}</p>
       <p><strong>Ubicación:</strong> ${limpiarTexto(book.ubicacion)}</p>
       <p><strong>Disponible:</strong> ${book.disponible == 1 ? "Sí" : "No"}</p>
-      <p><strong>ID del libro:</strong> ${book.id}</p>
-      <p><strong>ID del dueño:</strong> ${book.usuario_id}</p>
+      <p><strong>ID del libro:</strong> ${limpiarTexto(book.id)}</p>
+      <p><strong>ID del dueño:</strong> ${limpiarTexto(book.usuario_id)}</p>
     </div>
   `).join("");
 }
@@ -78,10 +80,10 @@ function renderSolicitudes(data) {
 
   return exchanges.map(exchange => `
     <div class="item-card">
-      <h3>Solicitud #${exchange.id}</h3>
-      <p><strong>Usuario solicitante:</strong> ${exchange.usuario_solicitante_id}</p>
-      <p><strong>Usuario receptor:</strong> ${exchange.usuario_receptor_id}</p>
-      <p><strong>Libro solicitado:</strong> ${exchange.libro_solicitado_id}</p>
+      <h3>Solicitud #${limpiarTexto(exchange.id)}</h3>
+      <p><strong>Usuario solicitante:</strong> ${limpiarTexto(exchange.usuario_solicitante_id)}</p>
+      <p><strong>Usuario receptor:</strong> ${limpiarTexto(exchange.usuario_receptor_id)}</p>
+      <p><strong>Libro solicitado:</strong> ${limpiarTexto(exchange.libro_solicitado_id)}</p>
       <p><strong>Estado:</strong> ${limpiarTexto(exchange.estado)}</p>
       <p><strong>Mensaje:</strong> ${limpiarTexto(exchange.mensaje)}</p>
       <p><strong>Fecha:</strong> ${limpiarTexto(exchange.creado_en)}</p>
@@ -98,10 +100,10 @@ function renderMensajes(data) {
 
   return messages.map(msg => `
     <div class="item-card">
-      <h3>Mensaje #${msg.id}</h3>
-      <p><strong>Solicitud:</strong> ${msg.solicitud_id}</p>
-      <p><strong>Usuario emisor:</strong> ${msg.usuario_emisor_id}</p>
-      <p><strong>Usuario receptor:</strong> ${msg.usuario_receptor_id}</p>
+      <h3>Mensaje #${limpiarTexto(msg.id)}</h3>
+      <p><strong>Solicitud:</strong> ${limpiarTexto(msg.solicitud_id)}</p>
+      <p><strong>Usuario emisor:</strong> ${limpiarTexto(msg.usuario_emisor_id)}</p>
+      <p><strong>Usuario receptor:</strong> ${limpiarTexto(msg.usuario_receptor_id)}</p>
       <p><strong>Mensaje:</strong> ${limpiarTexto(msg.mensaje)}</p>
       <p><strong>Fecha:</strong> ${limpiarTexto(msg.creado_en)}</p>
     </div>
@@ -117,8 +119,8 @@ function renderHistorial(data) {
 
   return history.map(item => `
     <div class="item-card">
-      <h3>Historial #${item.id}</h3>
-      <p><strong>Solicitud:</strong> ${item.solicitud_id}</p>
+      <h3>Historial #${limpiarTexto(item.id)}</h3>
+      <p><strong>Solicitud:</strong> ${limpiarTexto(item.solicitud_id)}</p>
       <p><strong>Usuario 1:</strong> ${item.usuario_1_id}</p>
       <p><strong>Usuario 2:</strong> ${item.usuario_2_id}</p>
       <p><strong>Descripción:</strong> ${limpiarTexto(item.descripcion)}</p>
@@ -137,11 +139,11 @@ function renderCalificaciones(data) {
 
   return ratings.map(rating => `
     <div class="item-card">
-      <h3>Calificación #${rating.id}</h3>
-      <p><strong>Usuario calificado:</strong> ${rating.usuario_calificado_id}</p>
-      <p><strong>Usuario calificador:</strong> ${rating.usuario_calificador_id}</p>
-      <p><strong>Solicitud:</strong> ${rating.solicitud_id}</p>
-      <p><strong>Puntuación:</strong> ${rating.puntuacion}/5</p>
+      <h3>Calificación #${limpiarTexto(rating.id)}</h3>
+      <p><strong>Usuario calificado:</strong> ${limpiarTexto(rating.usuario_calificado_id)}</p>
+      <p><strong>Usuario calificador:</strong> ${limpiarTexto(rating.usuario_calificador_id)}</p>
+      <p><strong>Solicitud:</strong> ${limpiarTexto(rating.solicitud_id)}</p>
+      <p><strong>Puntuación:</strong> ${limpiarTexto(rating.puntuacion)}/5</p>
       <p><strong>Comentario:</strong> ${limpiarTexto(rating.comentario)}</p>
       <p><strong>Fecha:</strong> ${limpiarTexto(rating.creado_en)}</p>
     </div>
@@ -157,8 +159,8 @@ function renderNotificaciones(data) {
 
   return notifications.map(noti => `
     <div class="item-card">
-      <h3>Notificación #${noti.id}</h3>
-      <p><strong>Usuario:</strong> ${noti.usuario_id}</p>
+      <h3>Notificación #${limpiarTexto(noti.id)}</h3>
+      <p><strong>Usuario:</strong> ${limpiarTexto(noti.usuario_id)}</p>
       <p><strong>Tipo:</strong> ${limpiarTexto(noti.tipo)}</p>
       <p><strong>Mensaje:</strong> ${limpiarTexto(noti.mensaje)}</p>
       <p><strong>Leída:</strong> ${noti.leida == 1 ? "Sí" : "No"}</p>

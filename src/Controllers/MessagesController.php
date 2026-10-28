@@ -50,7 +50,8 @@ final class MessagesController extends BaseController
         }
 
         $solicitudIdInt = (int) $solicitudId;
-        if ($this->exchanges->findById($solicitudIdInt) === null) {
+        $exchange = $this->exchanges->findById($solicitudIdInt);
+        if ($exchange === null) {
             $this->fail('Solicitud no encontrada.', 404);
         }
         if ($this->users->findById((int) $emisor) === null) {
@@ -58,6 +59,14 @@ final class MessagesController extends BaseController
         }
         if ($this->users->findById((int) $receptor) === null) {
             $this->fail('Usuario receptor no encontrado.', 404);
+        }
+
+        $participants = [(int) $exchange['usuario_solicitante_id'], (int) $exchange['usuario_receptor_id']];
+        if ((int) $emisor === (int) $receptor
+            || !in_array((int) $emisor, $participants, true)
+            || !in_array((int) $receptor, $participants, true)) {
+            $this->fail('El mensaje debe enviarse entre los participantes de la solicitud.', 422);
+            return;
         }
 
         try {

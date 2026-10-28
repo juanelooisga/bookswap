@@ -57,8 +57,21 @@ final class RatingsController extends BaseController
         if ($this->users->findById((int) $calificador) === null) {
             $this->fail('Usuario calificador no encontrado.', 404);
         }
-        if ($this->exchanges->findById((int) $solicitud) === null) {
+        $exchange = $this->exchanges->findById((int) $solicitud);
+        if ($exchange === null) {
             $this->fail('Solicitud no encontrada.', 404);
+        }
+
+        $participants = [(int) $exchange['usuario_solicitante_id'], (int) $exchange['usuario_receptor_id']];
+        if ((int) $calificado === (int) $calificador
+            || !in_array((int) $calificado, $participants, true)
+            || !in_array((int) $calificador, $participants, true)) {
+            $this->fail('La calificación debe ser entre los participantes de la solicitud.', 422);
+            return;
+        }
+        if (!in_array($exchange['estado'], ['aceptada', 'completada'], true)) {
+            $this->fail('La solicitud debe estar aceptada para calificar.', 409);
+            return;
         }
 
         try {

@@ -22,6 +22,9 @@ abstract class BaseController
      */
     protected function fail(string $message, int $status = 400, array $errors = []): void
     {
+        if (!\Juanc\Bookswap\Utils\Env::bool('APP_DEBUG', false)) {
+            unset($errors['exception']);
+        }
         JsonResponse::error($message, $status, $errors);
     }
 

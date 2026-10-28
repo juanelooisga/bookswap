@@ -45,3 +45,7 @@ El ZIP no contiene los registros de la base original. El 28 de octubre de 2026 s
 - La preparación inicial conservó los 39 archivos de aplicación y esquema. Posteriormente se añadió el metadato de autor a la interfaz, sin modificar su funcionamiento.
 - No se incluye `.env`, `vendor/`, caché de PHPUnit ni configuración del editor en el paquete público.
 - Repositorio preparado para publicación en GitHub; no se ha desplegado una demo de esta aplicación.
+
+## Preparación posterior de la demo
+
+La revisión anterior describe la versión académica de `main`. En `codex/public-demo` se incorporaron los ajustes de API, escape de contenido, coherencia de participantes, transacciones y conexión MySQL cifrada. Consultar `DEMO_PUBLICA.md` para conocer el alcance, las pruebas y los pendientes de conexión remota. La demo continúa sin autenticación y utiliza únicamente información ficticia.
