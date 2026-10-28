@@ -135,6 +135,16 @@ Notificación al solicitante cuando se acepta su solicitud de intercambio.
 
 ![Notificación de solicitud aceptada](screenshots/notificacion-solicitud-aceptada.png)
 
+### Baja lógica de un libro
+
+El libro se marca como no disponible sin eliminar su registro de MySQL.
+
+![Confirmación de libro no disponible](screenshots/libro-no-disponible.png)
+
+Al repetir la búsqueda, el libro deja de aparecer entre los disponibles.
+
+![Búsqueda sin libros disponibles](screenshots/busqueda-sin-disponibles.png)
+
 ## Estructura
 
 ```text
