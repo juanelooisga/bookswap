@@ -84,6 +84,37 @@ Respuesta enviada por el propietario al solicitante dentro de la misma solicitud
 
 ![Respuesta del propietario del libro](screenshots/mensaje-respuesta.png)
 
+### Conversación guardada
+
+Consulta de los mensajes asociados a la solicitud de intercambio, enviados en ambas direcciones.
+
+![Mensaje del solicitante guardado](screenshots/conversacion-solicitante.png)
+
+![Respuesta del propietario guardada](screenshots/conversacion-propietario.png)
+
+### Aceptación de la solicitud
+
+Confirmación de la aceptación y consulta de la solicitud con su nuevo estado.
+
+![Confirmación de aceptación](screenshots/solicitud-aceptacion-confirmada.png)
+
+![Solicitud con estado aceptada](screenshots/solicitud-aceptada.png)
+
+<details>
+<summary>Ver detalle adicional de la solicitud aceptada</summary>
+
+![Detalle de la solicitud aceptada](screenshots/solicitud-aceptada-detalle.png)
+
+</details>
+
+### Historial del intercambio
+
+Registro generado al aceptar la solicitud, con sus participantes y el estado que almacena esta versión del sistema.
+
+![Registro en el historial](screenshots/historial-intercambio.png)
+
+![Detalle del registro del historial](screenshots/historial-intercambio-detalle.png)
+
 ## Estructura
 
 ```text
