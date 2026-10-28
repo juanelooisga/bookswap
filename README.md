@@ -115,6 +115,26 @@ Registro generado al aceptar la solicitud, con sus participantes y el estado que
 
 ![Detalle del registro del historial](screenshots/historial-intercambio-detalle.png)
 
+### Calificaciones de usuarios
+
+Registro de una calificación asociada a la solicitud de intercambio.
+
+![Calificación registrada correctamente](screenshots/calificacion-registrada.png)
+
+Consulta de la calificación con sus participantes y solicitud relacionada.
+
+![Consulta de la calificación](screenshots/calificacion-consulta.png)
+
+Puntuación de ejemplo y comentario almacenados.
+
+![Puntuación y comentario de la calificación](screenshots/calificacion-detalle.png)
+
+### Notificaciones
+
+Notificación al solicitante cuando se acepta su solicitud de intercambio.
+
+![Notificación de solicitud aceptada](screenshots/notificacion-solicitud-aceptada.png)
+
 ## Estructura
 
 ```text
