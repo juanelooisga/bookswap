@@ -28,6 +28,28 @@ Esta versión no utiliza Vue.js.
 
 El registro de perfiles no equivale a un sistema de inicio de sesión. La versión actual usa identificadores capturados en formularios; sus limitaciones se detallan en [la revisión técnica](docs/REVISION.md).
 
+## Capturas del sistema
+
+Capturas de la ejecución local con MySQL y datos ficticios.
+
+### Registro de un libro
+
+Formulario de alta de un libro y confirmación de registro correcto.
+
+![Registro de un libro en BookSwap](screenshots/registro-libro.png)
+
+### Búsqueda de libros
+
+Búsqueda por título y resultado con autor, género y estado físico del libro.
+
+![Búsqueda de El principito](screenshots/busqueda-libros.png)
+
+### Disponibilidad y propietario
+
+Detalle del resultado con ubicación, disponibilidad e identificadores del libro y su propietario, utilizados en la solicitud de intercambio.
+
+![Disponibilidad y propietario del libro](screenshots/detalle-libro.png)
+
 ## Estructura
 
 ```text
@@ -47,6 +69,7 @@ bookswap/
 │   └── Utils/
 ├── database/migrations/    # Estructura SQL sin registros personales
 ├── tests/
+├── screenshots/            # Capturas del sistema con datos ficticios
 ├── docs/
 ├── .env.example
 ├── composer.json
