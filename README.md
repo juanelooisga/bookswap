@@ -70,6 +70,20 @@ Detalle del estado pendiente y del mensaje inicial.
 
 ![Estado pendiente de la solicitud](screenshots/solicitud-pendiente.png)
 
+### Mensajes entre participantes
+
+Formulario de mensaje asociado a la solicitud de intercambio.
+
+![Formulario para enviar un mensaje](screenshots/mensaje-formulario.png)
+
+Confirmación del envío del mensaje del solicitante al propietario del libro.
+
+![Mensaje enviado correctamente](screenshots/mensaje-enviado.png)
+
+Respuesta enviada por el propietario al solicitante dentro de la misma solicitud.
+
+![Respuesta del propietario del libro](screenshots/mensaje-respuesta.png)
+
 ## Estructura
 
 ```text
