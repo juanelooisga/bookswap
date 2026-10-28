@@ -1,9 +1,8 @@
 # BookSwap - Aplicación de Intercambio de Libros
 
-## Integrantes
+## Creador y desarrollador
 
-- Juan Isaías García
-- Edgar Jaziel Onchi Andrade
+- Juan Isais Garcia
 
 ## Descripción del proyecto
 
@@ -347,7 +346,7 @@ El proyecto fue desarrollado aplicando Spec Driven Development, o SDD.
 
 Primero se definieron las funciones que debía cumplir BookSwap con base en las historias de usuario. Después se dividió el desarrollo en fases, como usuarios, libros, solicitudes, mensajes, notificaciones, historial, calificaciones e interfaz web.
 
-Cursor y OpenSpec se usaron como apoyo para generar código, pero el equipo revisó, probó y corrigió las funciones hasta que cumplieran con lo solicitado.
+Cursor y OpenSpec se usaron como apoyo para generar código, pero Juan Isais Garcia revisó, probó y corrigió las funciones hasta que cumplieran con lo solicitado.
 
 ## Estado del proyecto
 
@@ -368,9 +367,8 @@ Antes de usar el proyecto, revisar lo siguiente:
 - La interfaz debe abrirse desde http://localhost:8080/frontend.html.
 - Para verificar los registros, usar phpMyAdmin.
 
-## Autores
+## Autor
 
-Proyecto realizado por:
+Proyecto creado y desarrollado por:
 
-- Juan Isaías García
-- Edgar Jaziel Onchi Andrade
+- Juan Isais Garcia

@@ -2,12 +2,11 @@
 
 Proyecto académico de una plataforma de intercambio de libros, con API REST en PHP y persistencia en MySQL.
 
-## Integrantes
+## Creador y desarrollador
 
-- Juan Isaías García
-- Edgar Jaziel Onchi Andrade
+- Juan Isais Garcia
 
-Desarrollado para Tópicos de Desarrollo Web con apoyo de Cursor y OpenSpec mediante Spec Driven Development. Se conservan los créditos del proyecto original.
+Desarrollado para Tópicos de Desarrollo Web con apoyo de Cursor y OpenSpec mediante Spec Driven Development. Desarrollado íntegramente por Juan Isais Garcia.
 
 ## Tecnologías
 

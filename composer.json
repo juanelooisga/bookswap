@@ -21,5 +21,11 @@
     },
     "scripts": {
         "test": "phpunit"
-    }
+    },
+    "authors": [
+        {
+            "name": "Juan Isais Garcia",
+            "homepage": "https://github.com/juanelooisga"
+        }
+    ]
 }

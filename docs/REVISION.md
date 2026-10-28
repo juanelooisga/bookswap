@@ -1,6 +1,6 @@
 # Revisión previa a GitHub y a una demo
 
-Revisión del ZIP recibido el 28 de octubre de 2026. Esta copia conserva sin cambios los archivos PHP, JavaScript, HTML y SQL del original. Solo se prepara el contenido para publicación y su documentación.
+Revisión del ZIP recibido el 28 de octubre de 2026. Esta copia conserva las reglas de negocio del original. Se prepara el contenido para publicación y se actualizan la documentación y los metadatos de autoría.
 
 ## Verificado en el código
 
@@ -11,7 +11,7 @@ Revisión del ZIP recibido el 28 de octubre de 2026. Esta copia conserva sin cam
 - Esquema SQL sin instrucciones INSERT con registros de usuarios.
 - Archivo `.env` presente en el ZIP original y excluido de esta copia.
 - Dependencias `vendor/` presentes en el ZIP original y excluidas de la publicación.
-- README con dos integrantes; se conservan ambos créditos.
+- Creador y desarrollador único: Juan Isais Garcia.
 
 ## Pendientes para una demo pública
 
@@ -42,6 +42,6 @@ El ZIP no contiene el contenido de tu base MySQL local. No se han importado migr
 - Sintaxis correcta en `public/assets/app.js`.
 - `composer validate --no-check-publish --no-interaction`: válido.
 - Prueba original de PHPUnit ejecutada en una copia temporal: 1 prueba, 5 aserciones, sin fallos.
-- Los 39 archivos de aplicación y esquema conservados coinciden byte a byte con los del ZIP original.
+- La preparación inicial conservó los 39 archivos de aplicación y esquema. Posteriormente se añadió el metadato de autor a la interfaz, sin modificar su funcionamiento.
 - No se incluye `.env`, `vendor/`, caché de PHPUnit ni configuración del editor en el paquete público.
 - Repositorio preparado para publicación en GitHub; no se ha desplegado una demo de esta aplicación.
