@@ -50,6 +50,26 @@ Detalle del resultado con ubicación, disponibilidad e identificadores del libro
 
 ![Disponibilidad y propietario del libro](screenshots/detalle-libro.png)
 
+### Solicitud de intercambio
+
+Captura de los usuarios participantes, el libro solicitado y el mensaje inicial.
+
+![Formulario de solicitud de intercambio](screenshots/solicitud-formulario.png)
+
+Confirmación del registro de la solicitud.
+
+![Solicitud creada correctamente](screenshots/solicitud-creada.png)
+
+### Consulta de solicitudes pendientes
+
+Listado de la solicitud de ejemplo con sus participantes y el libro asociado.
+
+![Participantes y libro de la solicitud](screenshots/solicitud-listado.png)
+
+Detalle del estado pendiente y del mensaje inicial.
+
+![Estado pendiente de la solicitud](screenshots/solicitud-pendiente.png)
+
 ## Estructura
 
 ```text
