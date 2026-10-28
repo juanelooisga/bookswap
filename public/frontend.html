@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>BookSwap | Intercambio de Libros</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div>
+      <h1>BookSwap</h1>
+      <p>Plataforma de intercambio de libros entre usuarios</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="card">
+      <h2>1. Crear perfil</h2>
+      <input id="user_nombre" placeholder="Nombre">
+      <input id="user_correo" placeholder="Correo">
+      <input id="user_telefono" placeholder="Teléfono">
+      <input id="user_ubicacion" placeholder="Ubicación">
+      <input id="user_preferencias" placeholder="Preferencias literarias">
+      <input id="user_password" placeholder="Contraseña" type="password">
+      <button onclick="crearUsuario()">Registrar usuario</button>
+      <div id="resultado_usuarios" class="resultado"></div>
+    </section>
+
+    <section class="card">
+      <h2>2. Añadir libro</h2>
+      <input id="book_usuario_id" placeholder="ID del usuario">
+      <input id="book_titulo" placeholder="Título">
+      <input id="book_autor" placeholder="Autor">
+      <input id="book_genero" placeholder="Género">
+      <input id="book_estado" placeholder="Descripción del estado">
+      <input id="book_ubicacion" placeholder="Ubicación">
+      <button onclick="crearLibro()">Registrar libro</button>
+      <div id="resultado_registro_libro" class="resultado"></div>
+    </section>
+
+    <section class="card">
+      <h2>3. Buscar libros</h2>
+      <input id="buscar_texto" placeholder="Buscar por título, autor, género o ubicación">
+      <button onclick="buscarLibros()">Buscar</button>
+      <div id="resultado_libros" class="resultado"></div>
+    </section>
+
+    <section class="card">
+      <h2>4. Crear solicitud de intercambio</h2>
+      <input id="exchange_solicitante" placeholder="ID usuario solicitante">
+      <input id="exchange_receptor" placeholder="ID usuario receptor">
+      <input id="exchange_libro" placeholder="ID libro solicitado">
+      <input id="exchange_mensaje" placeholder="Mensaje inicial">
+      <button onclick="crearSolicitud()">Crear solicitud</button>
+      <div id="resultado_crear_solicitud" class="resultado"></div>
+    </section>
+
+    <section class="card">
+      <h2>5. Calificar y comentar</h2>
+      <input id="rating_calificado" placeholder="ID usuario calificado">
+      <input id="rating_calificador" placeholder="ID usuario calificador">
+      <input id="rating_solicitud" placeholder="ID solicitud">
+      <input id="rating_puntuacion" placeholder="Puntuación 1-5">
+      <input id="rating_comentario" placeholder="Comentario">
+      <button onclick="crearCalificacion()">Registrar calificación</button>
+
+      <input id="rating_usuario_consulta" placeholder="ID usuario para consultar calificaciones">
+      <button onclick="consultarCalificaciones()">Ver calificaciones</button>
+
+      <div id="resultado_calificaciones" class="resultado"></div>
+    </section>
+
+    <section class="card">
+      <h2>6. Notificaciones</h2>
+      <input id="notificaciones_usuario_id" placeholder="ID usuario">
+      <button onclick="consultarNotificaciones()">Ver notificaciones</button>
+      <div id="resultado_notificaciones" class="resultado"></div>
+    </section>
+
+    <section class="card">
+      <h2>7. Aceptar o rechazar solicitudes</h2>
+      <button onclick="listarSolicitudes()">Ver solicitudes</button>
+      <input id="solicitud_accion_id" placeholder="ID de la solicitud">
+      <button onclick="aceptarSolicitud()">Aceptar solicitud</button>
+      <button onclick="rechazarSolicitud()">Rechazar solicitud</button>
+      <div id="resultado_solicitudes" class="resultado"></div>
+    </section>
+
+    <section class="card">
+      <h2>8. Enviar mensajes</h2>
+      <input id="msg_solicitud" placeholder="ID solicitud">
+      <input id="msg_emisor" placeholder="ID emisor">
+      <input id="msg_receptor" placeholder="ID receptor">
+      <input id="msg_texto" placeholder="Mensaje">
+      <button onclick="enviarMensaje()">Enviar mensaje</button>
+      <button onclick="consultarMensajes()">Consultar mensajes</button>
+      <div id="resultado_mensajes" class="resultado"></div>
+    </section>
+
+    <section class="card">
+      <h2>9. Historial</h2>
+      <button onclick="consultarHistorial()">Ver historial</button>
+      <div id="resultado_historial" class="resultado"></div>
+    </section>
+
+    <section class="card">
+      <h2>10. Eliminar libro de disponibles</h2>
+      <input id="delete_book_id" placeholder="ID del libro">
+      <button onclick="eliminarLibroDisponible()">Marcar como no disponible</button>
+      <div id="resultado_eliminar_libro" class="resultado"></div>
+    </section>
+
+  </main>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

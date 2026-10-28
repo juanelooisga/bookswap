@@ -1,0 +1,25 @@
+{
+    "name": "juanc/bookswap",
+    "description": "Plataforma de intercambio de libros — API REST (PHP 8, MVC)",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Juanc\\Bookswap\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Juanc\\Bookswap\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}

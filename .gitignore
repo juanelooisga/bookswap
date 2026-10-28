@@ -1,0 +1,24 @@
+# Dependencias instaladas con Composer
+/vendor/
+
+# Configuracion local y secretos
+.env
+.env.*
+!.env.example
+
+# Cache y registros
+.phpunit.result.cache
+.phpunit.cache/
+*.log
+
+# Editores y sistema
+.cursor/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Respaldos y archivos de trabajo
+/database/backups/
+*.zip
+*.bak
