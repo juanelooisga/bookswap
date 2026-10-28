@@ -32,9 +32,9 @@ Estos puntos se documentan para priorizar ajustes posteriores; no se cambian las
 
 Código, esquema SQL, pruebas, Composer y su lock, configuración de ejemplo y documentación. No se incluye una exportación de la base con registros reales ni credenciales locales.
 
-## Validación pendiente de base de datos
+## Validación local con base de datos
 
-El ZIP no contiene el contenido de tu base MySQL local. No se han importado migraciones ni realizado escrituras en tus bases existentes. Para probar los flujos se utilizará una base aislada con datos ficticios.
+El ZIP no contiene los registros de la base original. El 28 de octubre de 2026 se importaron las siete tablas en una base nueva y aislada, identificada como prueba de portafolio. Las pruebas HTTP utilizaron datos ficticios y no modificaron las bases existentes. Ver [resultados de las pruebas locales](PRUEBAS_LOCALES.md).
 
 ## Comprobaciones ejecutadas
 
